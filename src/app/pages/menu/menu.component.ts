@@ -7,17 +7,17 @@ import {MenuService} from '../../menu.service'
 })
 export class MenuComponent implements OnInit {
   public m_menu_items
-  constructor(private heroService: MenuService) { }
+  constructor(private menu: MenuService) { }
 
   ngOnInit(): void {
     this.m_menu_items=''
   }
-  /*
+  
   public getMenuItems(){
     this.menu.searchMenuItems().subscribe(resp =>{
       console.log(resp)
       this.m_menu_items = resp
     })
   }
-  */
+ 
 }

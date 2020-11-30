@@ -1,1 +1,5 @@
 <p>menu works!</p>
+<input type="button" (click)="getMenuItems()" value="search">
+<div *ngIf="m_menu_items">
+    {{m_menu_items}}
+</div>
