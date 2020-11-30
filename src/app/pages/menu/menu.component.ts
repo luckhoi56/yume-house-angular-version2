@@ -10,12 +10,11 @@ export class MenuComponent implements OnInit {
   constructor(private menu: MenuService) { }
 
   ngOnInit(): void {
-    this.m_menu_items=''
+    this.getMenuItems()
   }
   
   public getMenuItems(){
     this.menu.searchMenuItems().subscribe(resp =>{
-      console.log(resp)
       this.m_menu_items = resp
     })
   }
