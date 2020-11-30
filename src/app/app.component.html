@@ -8,10 +8,15 @@
     </ul>
   </nz-header>
   <nz-content>
-    <nz-breadcrumb>
+    <nz-breadcrumb *ngIf="isMenuRoute()">
       <nz-breadcrumb-item>Home</nz-breadcrumb-item>
       <nz-breadcrumb-item>List</nz-breadcrumb-item>
       <nz-breadcrumb-item>App</nz-breadcrumb-item>
+    </nz-breadcrumb>
+
+    <nz-breadcrumb *ngIf="isHomeRoute()">
+      <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+      
     </nz-breadcrumb>
     <div class="inner-content"><router-outlet></router-outlet></div>
   </nz-content>
