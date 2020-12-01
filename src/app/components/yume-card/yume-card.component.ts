@@ -6,8 +6,8 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./yume-card.component.css']
 })
 export class YumeCardComponent implements OnInit {
-  @Input() nzSrc
-  @Input() m_src
+  @Input() item
+  
 
   constructor() { }
 

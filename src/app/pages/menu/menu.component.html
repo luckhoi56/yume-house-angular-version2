@@ -2,12 +2,9 @@
     <div nz-row nzJustify="space-between" [nzGutter]="['8', '24']">
         <div *ngFor="let item of m_menu_items">        
             <div nz-col nzSpan="4">
-                <app-yume-card [m_src] = "item.Image" [nzSrc] ="item.Image"></app-yume-card>
+                <app-yume-card [item] ="item"></app-yume-card>
             </div>
-          
-        </div>
-        
+        </div>   
     </div>
-   
 </div>
 

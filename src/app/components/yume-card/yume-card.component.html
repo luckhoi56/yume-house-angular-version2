@@ -1,17 +1,17 @@
 <nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
-    <nz-card-meta nzTitle="Card title" nzDescription="This is the description" [nzAvatar]="avatarTemplate"></nz-card-meta>
+    <nz-card-meta [nzTitle]="item.ItemName" nzDescription="This is the description" [nzAvatar]="avatarTemplate"></nz-card-meta>
   </nz-card>
   <ng-template #avatarTemplate>
-    <nz-avatar [nzSrc]="nzSrc"></nz-avatar>
+    <nz-avatar [nzSrc]="item.Image"></nz-avatar>
   </ng-template>
   <ng-template #coverTemplate>
-    <img alt="example" [src]="m_src" />
+    <img alt="example" [src]="item.Image" />
   </ng-template>
   <ng-template #actionSetting>
-    <i nz-icon nzType="setting"></i>
+    <i nz-icon nzType="plus"></i>
   </ng-template>
   <ng-template #actionEdit>
-    <i nz-icon nzType="edit"></i>
+    <i nz-icon nzType="minus"></i>
   </ng-template>
   <ng-template #actionEllipsis>
     <i nz-icon nzType="ellipsis"></i>
