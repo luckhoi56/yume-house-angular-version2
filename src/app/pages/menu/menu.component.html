@@ -1,7 +1,13 @@
-<p>menu works!</p>
-<input type="button" (click)="getMenuItems()" value="search">
 <div *ngIf="m_menu_items">
-    {{m_menu_items}}
+    <div nz-row nzJustify="space-between">
+        <div *ngFor="let item of m_menu_items">        
+            <div nz-col nzSpan="4">
+                <app-yume-card [m_src] = "item.Image" [nzSrc] ="item.Image"></app-yume-card>
+            </div>
+          
+        </div>
+        
+    </div>
+   
 </div>
 
-<app-yume-card></app-yume-card>

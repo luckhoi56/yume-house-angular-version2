@@ -7,6 +7,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +19,9 @@ import { NzListModule } from 'ng-zorro-antd/list';
     NzLayoutModule,
     NzBreadCrumbModule,
     NzMenuModule,
-    NzListModule
+    NzListModule,
+    NzAvatarModule,
+    NzGridModule
   ],
   exports:[
     NzCardModule,
@@ -26,7 +30,9 @@ import { NzListModule } from 'ng-zorro-antd/list';
     NzLayoutModule,
     NzBreadCrumbModule,
     NzMenuModule,
-    NzListModule
+    NzListModule,
+    NzAvatarModule,
+    NzGridModule
   ]
 })
 export class MenuModule { }

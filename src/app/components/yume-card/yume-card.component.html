@@ -2,10 +2,10 @@
     <nz-card-meta nzTitle="Card title" nzDescription="This is the description" [nzAvatar]="avatarTemplate"></nz-card-meta>
   </nz-card>
   <ng-template #avatarTemplate>
-    <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+    <nz-avatar [nzSrc]="nzSrc"></nz-avatar>
   </ng-template>
   <ng-template #coverTemplate>
-    <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
+    <img alt="example" [src]="m_src" />
   </ng-template>
   <ng-template #actionSetting>
     <i nz-icon nzType="setting"></i>
