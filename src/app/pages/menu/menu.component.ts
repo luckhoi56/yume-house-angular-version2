@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuService} from '../../menu.service'
+import {Item} from "./item"
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  public m_items = []
+  //these are for the http call holders
   public m_menu_items
   public m_drinkSize
   public m_drinkTopping
   public m_soupSize
   public m_soupTopping
+  ///
  
-  constructor(private menu: MenuService) { }
-
-  ngOnInit(): void {
+  constructor(private menu: MenuService) {
     this.getMenuItems()
     this.getDrinkSize()
     this.getDrinkTopping()
     this.getSoupTopping()
-    this.getSoupSize()
+    this.getSoupSize() 
+  }
+
+  ngOnInit(): void {
+   
   }
   
   public getMenuItems(){
@@ -44,7 +50,7 @@ export class MenuComponent implements OnInit {
       this.m_soupTopping=resp
     })
   }
-  public getSoupSize(){ //
+  public getSoupSize(){ //worked
     this.menu.searchSoupSize().subscribe(resp =>{
       this.m_soupSize=resp
     })
