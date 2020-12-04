@@ -9,7 +9,19 @@
 </div>
 
 
-<div *ngIf="m_drinkSize">
-    {{m_soupSize[0].Choice}}
+<div *ngIf="m_menu_items">
+    <div *ngIf="m_drinkSize">
+        <div *ngIf="m_drinkTopping">
+            <div *ngIf="m_soupSize">
+                <div *ngIf="m_soupTopping">
+                    {{m_menu_items}}
+                    {{m_drinkSize}}
+                    {{m_drinkTopping}}
+                    {{m_soupSize}}
+                    {{m_soupTopping}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
