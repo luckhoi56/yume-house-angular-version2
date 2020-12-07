@@ -7,6 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class YumeCardComponent implements OnInit {
   @Input() item
+  @Input() m_content
   isVisible = false;
 
   constructor() { }

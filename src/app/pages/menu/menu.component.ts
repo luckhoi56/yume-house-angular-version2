@@ -11,8 +11,17 @@ export class MenuComponent implements OnInit {
   public m_drinkTopping
   public m_soupSize
   public m_soupTopping
- 
-  constructor(private menu: MenuService) { }
+  public m_processData
+  public m_count = 0
+  public m_ready:any ={
+    "menu_item_ready":0,
+    "drink_size_ready":0,
+    "drink_topping_ready":0,
+    "soup_size":0,
+    "soup_topping":0,
+    "invoked":0
+  }
+   constructor(private menu: MenuService) { }
 
   ngOnInit(): void {
     this.getMenuItems()
@@ -20,6 +29,7 @@ export class MenuComponent implements OnInit {
     this.getDrinkTopping()
     this.getSoupTopping()
     this.getSoupSize()
+    
   }
   
   public getMenuItems(){
@@ -31,6 +41,7 @@ export class MenuComponent implements OnInit {
   public getDrinkSize(){ //worked
     this.menu.searchDrinkSize().subscribe(resp =>{
       this.m_drinkSize = resp
+      //console.log(this.m_drinkSize)
     })
   }
 
@@ -48,5 +59,43 @@ export class MenuComponent implements OnInit {
     this.menu.searchSoupSize().subscribe(resp =>{
       this.m_soupSize=resp
     })
+  }
+  public processData(){
+    //console.log(this.m_menu_items)
+    if(this.m_ready.invoked == 0){
+      console.log("invoked")
+      this.m_ready.invoked = 1
+
+    }
+    
+  }
+  public menuItemReady(){
+    this.m_ready.menu_item_ready = 1
+    console.log("menu item" + this.m_ready.menu_item_ready )
+  }
+  public drinkSizeReady(){
+    this.m_ready.drink_size_ready = 1
+    console.log("drink Size" + this.m_ready.drink_size_ready )
+  }
+  public drinkToppingReady(){
+    this.m_ready.drink_topping_ready = 1
+    console.log("drink Topping" + this.m_ready.drink_topping_ready)
+  }
+  public soupSizeReady(){
+    this.m_ready.soup_size = 1
+    console.log("soup Size" + this.m_ready.soup_size)
+  }
+  public soupToppingReady(){
+    this.m_ready.soup_topping = 1
+    console.log("soup toppping" + this.m_ready.soup_topping )
+  }
+
+  public checkReady(){
+    if(this.m_ready.menu_item_ready + this.m_ready.drink_size_ready+this.m_ready.drink_topping_ready+this.m_ready.soup_size+this.m_ready.soup_topping == 5){
+      console.log("akira")
+      return true
+    }
+    else
+      return false
   }
 }

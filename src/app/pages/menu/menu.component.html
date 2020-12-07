@@ -1,4 +1,4 @@
-<div *ngIf="m_menu_items">
+<!-- <div *ngIf="m_menu_items">
     <div nz-row nzJustify="space-between" [nzGutter]="['8', '24']">
         <div *ngFor="let item of m_menu_items">        
             <div nz-col nzSpan="4">
@@ -8,20 +8,16 @@
     </div>
 </div>
 
+ -->
 
-<div *ngIf="m_menu_items">
-    <div *ngIf="m_drinkSize">
-        <div *ngIf="m_drinkTopping">
-            <div *ngIf="m_soupSize">
-                <div *ngIf="m_soupTopping">
-                    {{m_menu_items}}
-                    {{m_drinkSize}}
-                    {{m_drinkTopping}}
-                    {{m_soupSize}}
-                    {{m_soupTopping}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+
+
+<ng-container *ngIf="m_drinkSize ?drinkSizeReady():false"></ng-container>
+<ng-container *ngIf="m_menu_items ?menuItemReady():false"></ng-container>
+<ng-container *ngIf="m_drinkTopping ?drinkToppingReady():false"></ng-container>
+<ng-container *ngIf="m_soupSize ?soupSizeReady():false"></ng-container>
+<ng-container *ngIf="m_soupTopping ?soupToppingReady():false"></ng-container>
+<ng-container *ngIf="checkReady() ?processData():false">
+
+</ng-container>
