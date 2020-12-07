@@ -8,9 +8,9 @@
     </div>
 </div>
 
+
+
  -->
-
-
 
 
 <ng-container *ngIf="m_drinkSize ?drinkSizeReady():false"></ng-container>
@@ -19,5 +19,5 @@
 <ng-container *ngIf="m_soupSize ?soupSizeReady():false"></ng-container>
 <ng-container *ngIf="m_soupTopping ?soupToppingReady():false"></ng-container>
 <ng-container *ngIf="checkReady() ?processData():false">
-
+    {{this.m_data}}
 </ng-container>
