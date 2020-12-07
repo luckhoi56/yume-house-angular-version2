@@ -73,19 +73,19 @@ export class MenuComponent implements OnInit {
           m_temp["Toppings"]=this.m_soupTopping
         }
         else if(m_temp.Category=="Smoothie"){
-          m_temp["Size"]=this.m_drinkSize
+          m_temp["Sizes"]=this.m_drinkSize
           m_temp["Toppings"]=this.m_drinkTopping
         }
         else{
-          m_temp["Size"]=''
+          m_temp["Sizes"]=''
           m_temp["Toppings"]=''
         }
-        this.m_data.push(m_temp)
+        this.m_data.push(m_temp) //make sure to inject back to the service
         //console.log(m_temp)
         //
         
       }
-      console.log(this.m_data)
+      console.log(this.m_data) 
     }
     
   }
@@ -113,6 +113,7 @@ export class MenuComponent implements OnInit {
   public checkReady(){
     if(this.m_ready.menu_item_ready + this.m_ready.drink_size_ready+this.m_ready.drink_topping_ready+this.m_ready.soup_size+this.m_ready.soup_topping == 5){
       //console.log("akira")
+      this.processData()
       return true
     }
     else

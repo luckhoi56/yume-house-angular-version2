@@ -20,9 +20,10 @@
   
   
   <nz-modal [(nzVisible)]="isVisible" nzTitle="Options" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-    <p>Content one</p>
-    <p>Content two</p>
-    <p>Content three</p>
-    <p>Content three</p>
+    <div *ngFor="let i of m_content">
+      <div>{{i.Choice}}</div>
+     
+    </div>
+    
   </nz-modal>
   
