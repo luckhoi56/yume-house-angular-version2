@@ -68,6 +68,7 @@ export class MenuComponent implements OnInit {
       this.m_ready.invoked = 1
       for(let item of this.m_menu_items){
         let m_temp = item
+        m_temp["Quantity"] = "0"
         if(m_temp.Category=="Soup"){
           m_temp["Sizes"]=this.m_soupSize
           m_temp["Toppings"]=this.m_soupTopping
@@ -112,8 +113,11 @@ export class MenuComponent implements OnInit {
 
   public checkReady(){
     if(this.m_ready.menu_item_ready + this.m_ready.drink_size_ready+this.m_ready.drink_topping_ready+this.m_ready.soup_size+this.m_ready.soup_topping == 5){
-      //console.log("akira")
+      //
       this.processData()
+      console.log(this.m_data)
+      this.menu.setFlag() //got all data now
+      this.menu.setData(this.m_data)
       return true
     }
     else

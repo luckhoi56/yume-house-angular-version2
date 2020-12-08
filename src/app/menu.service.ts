@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import { ThrowStmt } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
-
+  private m_flag = false //this flag tell the data is not unionized
+  public m_data = []
   constructor(private http:HttpClient) { }
 
   public searchMenuItems(){
@@ -23,5 +25,17 @@ export class MenuService {
     return this.http.get('https://yumemenu.s3-us-west-1.amazonaws.com/databaseFile/soupSize')
   }
   
-
+  public receiveAllData(){
+     // data is unionized now
+    return this.m_flag
+  }
+  public setFlag(){
+    this.m_flag = true
+  }
+  public getData(){
+    return this.m_data
+  }
+  public setData(data){
+    this.m_data = data
+  }
 }

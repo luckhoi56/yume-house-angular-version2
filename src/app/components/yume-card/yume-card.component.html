@@ -1,12 +1,15 @@
 <nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
-    <nz-card-meta [nzTitle]="item.ItemName" nzDescription="This is the quantity" [nzAvatar]="avatarTemplate"></nz-card-meta>
-  </nz-card>
+    <nz-card-meta [nzTitle]="item.ItemName" [nzDescription]="item.Price" [nzAvatar]="avatarTemplate"></nz-card-meta>
+    
+    <div>Quantity: {{item.Quantity}}</div>
+</nz-card>
   <ng-template #avatarTemplate>
     <nz-avatar [nzSrc]="item.Image"></nz-avatar>
   </ng-template>
   <ng-template #coverTemplate>
     <img alt="example" [src]="item.Image" />
   </ng-template>
+  
   <ng-template #actionSetting>
     <i nz-icon nzType="plus"></i>
   </ng-template>
