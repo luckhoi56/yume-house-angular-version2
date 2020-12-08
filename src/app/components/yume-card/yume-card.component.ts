@@ -28,4 +28,7 @@ export class YumeCardComponent implements OnInit {
     console.log('Button cancel clicked!');
     this.isVisible = false;
   }
+  plusOne():void{
+    this.item.Quantity++
+  }
 }

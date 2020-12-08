@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MenuService} from '../../menu.service'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public menu: MenuService) { }
 
   ngOnInit(): void {
   }

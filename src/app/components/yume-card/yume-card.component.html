@@ -11,10 +11,10 @@
   </ng-template>
   
   <ng-template #actionSetting>
-    <i nz-icon nzType="plus"></i>
+    <i nz-icon nzType="plus" (click)="plusOne()"></i>
   </ng-template>
   <ng-template #actionEdit>
-    <i nz-icon nzType="minus"></i>
+    <i nz-icon nzType="minus" (click)="minusOne()"></i>
   </ng-template>
   <ng-template #actionEllipsis>
     <i nz-icon nzType="ellipsis" (click)="showModal()"></i>

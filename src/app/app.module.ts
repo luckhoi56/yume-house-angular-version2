@@ -13,14 +13,16 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import {MenuModule} from './menu/menu.module';
-import { YumeCardComponent } from './components/yume-card/yume-card.component'
+import { YumeCardComponent } from './components/yume-card/yume-card.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component'
 registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MenuComponent,
-    YumeCardComponent
+    YumeCardComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

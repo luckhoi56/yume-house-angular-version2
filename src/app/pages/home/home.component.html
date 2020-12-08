@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div nz-row nzJustify="space-between" [nzGutter]="['8', '24']">
+    <!-- <div *ngFor="let item of m_data"> -->
+    <div *ngFor="let item of this.menu.getData()">    
+       <div nz-col nzSpan="4">
+           <app-yume-card [item] ="item" [m_content]="item.Toppings"></app-yume-card>
+       </div>
+   </div>   
+</div>
