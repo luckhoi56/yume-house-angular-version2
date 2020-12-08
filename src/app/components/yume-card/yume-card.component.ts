@@ -29,6 +29,9 @@ export class YumeCardComponent implements OnInit {
     this.isVisible = false;
   }
   plusOne():void{
-    this.item.Quantity++
+    this.item.Quantity <9 ?this.item.Quantity++:false
+  }
+  minusOne():void{
+    this.item.Quantity >0 ?this.item.Quantity--:false
   }
 }
