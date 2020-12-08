@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
     "invoked":0
   }
   public m_data=[] //this will hold data for entire table
-   constructor(private menu: MenuService) { }
+   constructor(public menu: MenuService) { }
 
   ngOnInit(): void {
     this.getMenuItems()
@@ -63,9 +63,9 @@ export class MenuComponent implements OnInit {
   }
   public processData(){
     //console.log(this.m_menu_items)
-    if(this.m_ready.invoked == 0){
+    if(this.menu.m_ready.invoked == 0){
      // console.log("invoked")
-      this.m_ready.invoked = 1
+      this.menu.m_ready.invoked = 1
       for(let item of this.m_menu_items){
         let m_temp = item
         m_temp["Quantity"] = "0"
@@ -91,33 +91,39 @@ export class MenuComponent implements OnInit {
     
   }
   public menuItemReady(){
-    this.m_ready.menu_item_ready = 1
+    this.menu.m_ready.menu_item_ready= 1
     //console.log("menu item" + this.m_ready.menu_item_ready )
   }
   public drinkSizeReady(){
-    this.m_ready.drink_size_ready = 1
+    this.menu.m_ready.drink_size_ready= 1
     //console.log("drink Size" + this.m_ready.drink_size_ready )
   }
   public drinkToppingReady(){
-    this.m_ready.drink_topping_ready = 1
+    this.menu.m_ready.drink_topping_ready = 1
     //console.log("drink Topping" + this.m_ready.drink_topping_ready)
   }
   public soupSizeReady(){
-    this.m_ready.soup_size = 1
+    this.menu.m_ready.soup_size = 1
     //console.log("soup Size" + this.m_ready.soup_size)
   }
   public soupToppingReady(){
-    this.m_ready.soup_topping = 1
+    this.menu.m_ready.soup_topping = 1
     //console.log("soup toppping" + this.m_ready.soup_topping )
   }
 
   public checkReady(){
-    if(this.m_ready.menu_item_ready + this.m_ready.drink_size_ready+this.m_ready.drink_topping_ready+this.m_ready.soup_size+this.m_ready.soup_topping == 5){
+    console.log(this.menu.m_ready)
+    if(this.menu.m_ready.menu_item_ready + this.menu.m_ready.drink_size_ready+this.menu.m_ready.drink_topping_ready+this.menu.m_ready.soup_size+this.menu.m_ready.soup_topping == 5 && this.menu.m_ready.invoked ==0){
       //
       this.processData()
-      console.log(this.m_data)
+      console.log(this.menu.m_ready)
       this.menu.setFlag() //got all data now
       this.menu.setData(this.m_data)
+      return true
+    }
+    else if(this.menu.m_ready.invoked ==1){
+      console.log(this.menu.m_data)
+      console.log("it is ready")
       return true
     }
     else

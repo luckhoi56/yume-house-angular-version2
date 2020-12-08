@@ -7,6 +7,14 @@ import { ThrowStmt } from '@angular/compiler';
 export class MenuService {
   private m_flag = false //this flag tell the data is not unionized
   public m_data = []
+  public m_ready:any ={
+    "menu_item_ready":0,
+    "drink_size_ready":0,
+    "drink_topping_ready":0,
+    "soup_size":0,
+    "soup_topping":0,
+    "invoked":0
+  }
   constructor(private http:HttpClient) { }
 
   public searchMenuItems(){
