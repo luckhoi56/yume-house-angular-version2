@@ -23,9 +23,20 @@
   
   
   <nz-modal [(nzVisible)]="isVisible" nzTitle="Options" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-    <div *ngFor="let i of m_content">
-      <div>{{i.Choice}}</div>
-      <app-yume-radio-button></app-yume-radio-button>
+    <div *ngFor="let i of item.Toppings">
+
+      <nz-radio-group [(ngModel)]="radioValue_1">
+        <label nz-radio [nzValue]="i.Choice">{{i.Choice}}</label> 
+      </nz-radio-group>
+    
+    </div>
+    
+    <div *ngFor="let i of item.Sizes">
+
+      <nz-radio-group [(ngModel)]="radioValue_2">
+        <label nz-radio [nzValue]="i.Choice">{{i.Choice}}</label> 
+      </nz-radio-group>
+    
     </div>
     
   </nz-modal>
