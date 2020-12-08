@@ -23,6 +23,7 @@
   
   
   <nz-modal [(nzVisible)]="isVisible" nzTitle="Options" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <h2>Toppings</h2>
     <div *ngFor="let i of item.Toppings">
 
       <nz-radio-group [(ngModel)]="radioValue_1">
@@ -31,6 +32,7 @@
     
     </div>
     
+    <h2>Sizes</h2>
     <div *ngFor="let i of item.Sizes">
 
       <nz-radio-group [(ngModel)]="radioValue_2">
