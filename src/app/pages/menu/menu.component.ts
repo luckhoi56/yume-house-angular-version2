@@ -86,7 +86,7 @@ export class MenuComponent implements OnInit {
         //
         
       }
-      console.log(this.m_data) 
+      //console.log(this.m_data) 
     }
     
   }
@@ -112,21 +112,22 @@ export class MenuComponent implements OnInit {
   }
 
   public checkReady(){
-    console.log(this.menu.m_ready)
+    //console.log(this.menu.m_ready)
     if(this.menu.m_ready.menu_item_ready + this.menu.m_ready.drink_size_ready+this.menu.m_ready.drink_topping_ready+this.menu.m_ready.soup_size+this.menu.m_ready.soup_topping == 5 && this.menu.m_ready.invoked ==0){
       //
       this.processData()
-      console.log(this.menu.m_ready)
+      //console.log(this.menu.m_ready)
       this.menu.setFlag() //got all data now
       this.menu.setData(this.m_data)
       return true
     }
     else if(this.menu.m_ready.invoked ==1){
-      console.log(this.menu.m_data)
-      console.log("it is ready")
+      //console.log(this.menu.m_data)
+      //console.log("it is ready")
       return true
     }
     else
       return false
   }
+  
 }

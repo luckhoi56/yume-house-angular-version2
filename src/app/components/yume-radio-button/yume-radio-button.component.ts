@@ -11,5 +11,5 @@ export class YumeRadioButtonComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  radioValue = 'A';
+  radioValue = 'with onions';
 }

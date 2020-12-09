@@ -6,6 +6,8 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./yume-card.component.css']
 })
 export class YumeCardComponent implements OnInit {
+  radioValue_1 = ""
+  radioValue_2 =""
   @Input() item
   @Input() m_content
   isVisible = false;
@@ -33,5 +35,15 @@ export class YumeCardComponent implements OnInit {
   }
   minusOne():void{
     this.item.Quantity >0 ?this.item.Quantity--:false
+  }
+  public updateToppingChosen(target):void{
+    this.item["chosenTopping"] = this.radioValue_1
+    console.log(this.item)
+    //console.log("ehy")
+  }
+  public updateSizeChosen(target):void{
+    this.item["chosenSize"] = this.radioValue_2
+    console.log(this.item)
+    //console.log("ehy")
   }
 }
