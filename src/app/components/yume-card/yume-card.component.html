@@ -27,7 +27,7 @@
     <div *ngFor="let i of item.Toppings">
 
       <nz-radio-group [(ngModel)]="radioValue_1">
-        <label nz-radio [nzValue]="i.Choice" (click)="updateToppingChosen($event.target.value)">{{i.Choice}}</label> 
+        <label nz-radio [nzValue]="i.Choice" (click)="updateToppingChosen($event.target.value)">{{i.Choice}}  +${{i.Price}}</label> 
       </nz-radio-group>
     
     </div>
@@ -36,7 +36,7 @@
     <div *ngFor="let i of item.Sizes">
 
       <nz-radio-group [(ngModel)]="radioValue_2">
-        <label nz-radio [nzValue]="i.Choice" (click)="updateSizeChosen($event.target.value)">{{i.Choice}}</label> 
+        <label nz-radio [nzValue]="i.Choice" (click)="updateSizeChosen($event.target.value)">{{i.Choice}} +${{i.Price}}</label> 
       </nz-radio-group>
     
     </div>
