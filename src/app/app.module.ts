@@ -14,7 +14,8 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import {MenuModule} from './menu/menu.module';
 import { YumeCardComponent } from './components/yume-card/yume-card.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component'
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { YumeRadioButtonComponent } from './components/yume-radio-button/yume-radio-button.component'
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ registerLocaleData(en);
     HomeComponent,
     MenuComponent,
     YumeCardComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    YumeRadioButtonComponent
   ],
   imports: [
     BrowserModule,

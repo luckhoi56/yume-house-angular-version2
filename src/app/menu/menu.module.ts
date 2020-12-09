@@ -10,6 +10,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 @NgModule({
   declarations: [],
   imports: [
@@ -23,7 +24,8 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     NzListModule,
     NzAvatarModule,
     NzGridModule,
-    NzModalModule
+    NzModalModule,
+    NzRadioModule
   ],
   exports:[
     NzCardModule,
@@ -35,7 +37,8 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     NzListModule,
     NzAvatarModule,
     NzGridModule,
-    NzModalModule
+    NzModalModule,
+    NzRadioModule
   ]
 })
 export class MenuModule { }
