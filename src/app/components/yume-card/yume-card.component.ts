@@ -7,7 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class YumeCardComponent implements OnInit {
   radioValue_1 = ""
-  radioValue_2 =""
+  radioValue_2 = ""
   @Input() item
   @Input() m_content
   isVisible = false;
@@ -15,6 +15,16 @@ export class YumeCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if(this.item.Toppings[0] != null){
+      //console.log(this.item.Toppings[0].Choice)
+      this.radioValue_1 = this.item.Toppings[0].Choice
+      this.item["chosenTopping"] = this.radioValue_1
+    }
+    if(this.item.Sizes[0] != null){
+      //console.log(this.item.Sizes[0].Choice)
+      this.radioValue_2 = this.item.Sizes[0].Choice
+      this.item["chosenSize"] = this.radioValue_2
+    }
   }
 
   showModal(): void {
