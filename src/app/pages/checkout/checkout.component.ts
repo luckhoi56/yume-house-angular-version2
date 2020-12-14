@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MenuService} from '../../menu.service'
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(public menu: MenuService) { }
 
   ngOnInit(): void {
   }
