@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-yume-pay',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./yume-pay.component.css']
 })
 export class YumePayComponent implements OnInit {
-  m_tax = 0
-  m_total = 0
+  @Input() m_tax = 5
+  @Input() m_total = 0
   constructor() { }
 
   ngOnInit(): void {
