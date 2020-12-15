@@ -11,6 +11,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 @NgModule({
   declarations: [],
   imports: [
@@ -25,7 +26,8 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
     NzAvatarModule,
     NzGridModule,
     NzModalModule,
-    NzRadioModule
+    NzRadioModule,
+    NzStatisticModule
   ],
   exports:[
     NzCardModule,
@@ -38,7 +40,8 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
     NzAvatarModule,
     NzGridModule,
     NzModalModule,
-    NzRadioModule
+    NzRadioModule,
+    NzStatisticModule
   ]
 })
 export class MenuModule { }
