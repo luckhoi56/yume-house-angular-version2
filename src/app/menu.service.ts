@@ -32,6 +32,10 @@ export class MenuService {
   public searchSoupSize(){ //worked
     return this.http.get('https://yumemenu.s3-us-west-1.amazonaws.com/databaseFile/soupSize')
   }
+  public sendOrder(){
+    return this.http.post("http://localhost:4242/sendOrder", this.m_data)
+    //return this.http.get('http://localhost:4242/')
+  }
   
   public receiveAllData(){
      // data is unionized now

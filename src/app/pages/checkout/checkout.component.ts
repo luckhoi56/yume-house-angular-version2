@@ -15,6 +15,12 @@ export class CheckoutComponent implements OnInit {
     }
     return m_total
   }
+  public makePost(){
+    console.log("button being clicked")
+    this.menu.sendOrder().subscribe(resp=>{
+      console.log(resp)
+    })
+  }
   ngOnInit(): void {
   }
 
