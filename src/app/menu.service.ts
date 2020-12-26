@@ -16,7 +16,9 @@ export class MenuService {
     "invoked":0
   }
   constructor(private http:HttpClient) { }
-
+  public statusRestaurant(){
+    return this.http.get("http://localhost:4242/statusRestaurant")
+  }
   public searchMenuItems(){
     return this.http.get('https://yumemenu.s3-us-west-1.amazonaws.com/databaseFile/menu')
   }
