@@ -11,7 +11,7 @@ export class CheckoutComponent implements OnInit {
   public getTotal(){
     let m_total = 0
     for(let item of this.menu.getData()){
-      m_total += item.Quantity * item.Price
+      m_total += item.Quantity * (item.Price + (item.chosenSizePrice ? item.chosenSizePrice : 0) + (item.chosenToppingPrice ? item.chosenToppingPrice : 0))
     }
     return m_total
   }
