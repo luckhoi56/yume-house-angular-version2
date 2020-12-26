@@ -53,12 +53,15 @@ export class YumeCardComponent implements OnInit {
     this.item.Quantity >0 ?this.item.Quantity--:false
   }
   public updateToppingChosen(target):void{
-    this.item["chosenTopping"] = this.radioValue_1
+    this.item["chosenTopping"] = target.Choice
+    this.item["chosenToppingPrice"] = target.Price
+    //this.item["chosenToppingPrice"]
     console.log(this.item)
     //console.log("ehy")
   }
   public updateSizeChosen(target):void{
-    this.item["chosenSize"] = this.radioValue_2
+    this.item["chosenSize"] = target.Choice
+    this.item["chosenSizePrice"] = target.Price
     console.log(this.item)
     //console.log("ehy")
   }
