@@ -38,6 +38,9 @@ export class MenuService {
     return this.http.post("http://localhost:4242/sendOrder", this.m_data)
     //return this.http.get('http://localhost:4242/')
   }
+  public getReasonToClose(){
+    return this.http.get("http://localhost:4242/getReasonToClose")
+  }
   
   public receiveAllData(){
      // data is unionized now

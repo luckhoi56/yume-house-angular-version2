@@ -2,4 +2,4 @@
 <div *ngIf="m_status; else closeBlock">  
     <h1>Restaurant is open</h1>
 </div>
-<ng-template  #closeBlock>Restaurant is closed</ng-template>
+<ng-template  #closeBlock>{{m_reason_to_close}}</ng-template>
