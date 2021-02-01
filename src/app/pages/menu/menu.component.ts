@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit {
   public m_soupTopping
   public m_processData
   public m_count = 0
+  public m_chosen_category="Pho"
   public m_ready:any ={
     "menu_item_ready":0,
     "drink_size_ready":0,

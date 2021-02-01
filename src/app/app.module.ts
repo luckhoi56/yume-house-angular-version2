@@ -16,7 +16,8 @@ import {MenuModule} from './menu/menu.module';
 import { YumeCardComponent } from './components/yume-card/yume-card.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { YumeRadioButtonComponent } from './components/yume-radio-button/yume-radio-button.component';
-import { YumePayComponent } from './components/yume-pay/yume-pay.component'
+import { YumePayComponent } from './components/yume-pay/yume-pay.component';
+import { YumeDropDownComponent } from './components/yume-drop-down/yume-drop-down.component'
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ registerLocaleData(en);
     YumeCardComponent,
     CheckoutComponent,
     YumeRadioButtonComponent,
-    YumePayComponent
+    YumePayComponent,
+    YumeDropDownComponent
   ],
   imports: [
     BrowserModule,

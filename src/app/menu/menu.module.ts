@@ -12,6 +12,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 @NgModule({
   declarations: [],
   imports: [
@@ -27,7 +28,8 @@ import { NzStatisticModule } from 'ng-zorro-antd/statistic';
     NzGridModule,
     NzModalModule,
     NzRadioModule,
-    NzStatisticModule
+    NzStatisticModule,
+    NzDropDownModule
   ],
   exports:[
     NzCardModule,
@@ -41,7 +43,8 @@ import { NzStatisticModule } from 'ng-zorro-antd/statistic';
     NzGridModule,
     NzModalModule,
     NzRadioModule,
-    NzStatisticModule
+    NzStatisticModule,
+    NzDropDownModule
   ]
 })
 export class MenuModule { }

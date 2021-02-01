@@ -20,12 +20,17 @@
 <ng-container *ngIf="m_soupTopping ?soupToppingReady():false"></ng-container>
 
 <div *ngIf="checkReady()">
+    <app-yume-drop-down [m_chosen_menu]=this.menu.getData()></app-yume-drop-down>
+    <br>
     <div nz-row nzJustify="space-between" [nzGutter]="['8', '24']">
          <!-- <div *ngFor="let item of m_data"> -->
-        <div *ngFor="let item of this.menu.getData()">        
-            <div nz-col nzSpan="4">
-                <app-yume-card [item] ="item"></app-yume-card>
-            </div>
+        <div *ngFor="let item of this.menu.getFilteredData()">
+            
+                <div nz-col nzSpan="4">
+                    <app-yume-card [item] ="item"></app-yume-card>
+                </div>
+                    
+            
         </div>   
     </div>
 </div>

@@ -7,6 +7,7 @@ import { ThrowStmt } from '@angular/compiler';
 export class MenuService {
   private m_flag = false //this flag tell the data is not unionized
   public m_data = []
+  public m_chosen_category="Soup"
   public m_ready:any ={
     "menu_item_ready":0,
     "drink_size_ready":0,
@@ -51,6 +52,18 @@ export class MenuService {
   }
   public getData(){
     return this.m_data
+  }
+  public getFilteredData(){
+    let m_temp =[]
+    for(let item of this.m_data){
+      if(item["Category"] == this.m_chosen_category){
+        m_temp.push(item)
+      }
+    }
+    return m_temp
+  }
+  public setChosenCategory(m_value){
+    this.m_chosen_category = m_value
   }
   public setData(data){
     this.m_data = data
