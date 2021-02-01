@@ -15,6 +15,7 @@ export class YumeDropDownComponent implements OnInit {
   ngOnInit(): void {
     this.getCategory()
     this.m_default = this.m_category[0]
+    this.menu.setChosenCategory(this.m_default)
   }
   log(data: string): void {
     console.log(data);
