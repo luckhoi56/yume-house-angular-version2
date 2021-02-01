@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {MenuService} from '../../menu.service'
 
 @Component({
   selector: 'app-yume-drop-down',
@@ -9,7 +10,7 @@ export class YumeDropDownComponent implements OnInit {
   @Input() m_chosen_menu:string = ""
   public m_category=[]
   public m_default =""
-  constructor() { }
+  constructor(public menu: MenuService) { }
 
   ngOnInit(): void {
     this.getCategory()
@@ -18,6 +19,7 @@ export class YumeDropDownComponent implements OnInit {
   log(data: string): void {
     console.log(data);
     this.m_default=data
+    this.menu.setChosenCategory(this.m_default)
   }
   
   public getCategory(){
