@@ -8,14 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class YumeDropDownComponent implements OnInit {
   @Input() m_chosen_menu:string = ""
   public m_category=[]
+  public m_default =""
   constructor() { }
 
   ngOnInit(): void {
     this.getCategory()
+    this.m_default = this.m_category[0]
   }
   log(data: string): void {
     console.log(data);
-    this.m_chosen_menu=data
+    this.m_default=data
   }
   
   public getCategory(){
