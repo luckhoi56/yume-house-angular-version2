@@ -1,11 +1,12 @@
 <a nz-dropdown [nzDropdownMenu]="menu">
-    {{m_chosen_menu}}
+    {{this.m_category[0]}}
     <i nz-icon nzType="down"></i>
   </a>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>
-      <li nz-menu-item (click)="log('Pho')">Pho</li>
-      <li nz-menu-item (click)="log('Rice')">Rice</li>
-      <li nz-menu-item (click)="log('Drink')">Drink</li>
+       <div *ngFor="let item of m_category">   
+      <li nz-menu-item (click)="log('item')">{{item}}</li>
+      
+      </div>
     </ul>
   </nz-dropdown-menu>
