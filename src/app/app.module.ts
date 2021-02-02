@@ -17,7 +17,12 @@ import { YumeCardComponent } from './components/yume-card/yume-card.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { YumeRadioButtonComponent } from './components/yume-radio-button/yume-radio-button.component';
 import { YumePayComponent } from './components/yume-pay/yume-pay.component';
-import { YumeDropDownComponent } from './components/yume-drop-down/yume-drop-down.component'
+import { YumeDropDownComponent } from './components/yume-drop-down/yume-drop-down.component';
+import { YumeStripeComponent } from './components/yume-stripe/yume-stripe.component'
+import { StripeModule } from "stripe-angular";
+import { NgxStripeModule } from 'ngx-stripe';
+import { FormGroup, FormBuilder, Validators,ReactiveFormsModule  } from '@angular/forms';
+
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -28,7 +33,8 @@ registerLocaleData(en);
     CheckoutComponent,
     YumeRadioButtonComponent,
     YumePayComponent,
-    YumeDropDownComponent
+    YumeDropDownComponent,
+    YumeStripeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,9 @@ registerLocaleData(en);
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MenuModule
+    MenuModule,
+    NgxStripeModule.forRoot("pk_test_51GwwqJJpV9cXOdRhmPBpYIuoTOxiqRvvpKGEndZqwgj8tObTBnPpOgP7krDJJSsACzpf0xLylvGsliur7kkl2cOO00SW8uOU9S"),
+    ReactiveFormsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

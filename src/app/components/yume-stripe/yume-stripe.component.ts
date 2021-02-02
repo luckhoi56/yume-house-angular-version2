@@ -89,9 +89,21 @@ export class YumeStripeComponent implements OnInit {
   }
 
   createPaymentIntent(amount: number): Observable<PaymentIntent> {
+    console.log("get to payment intent")
     return this.http.post<PaymentIntent>(
-      `${env.apiUrl}/create-payment-intent`,
-      { amount }
+      `http://localhost:4242/create-payment-intent`,
+      {
+        "ingredients": [{
+            "name": "num1",
+            "quantity": "5"
+        }, {
+            "name": "num2",
+            "quantity": "2"
+        }, {
+            "name": "num3",
+            "quantity": "9"
+        }]
+    }
     );
   }
 }

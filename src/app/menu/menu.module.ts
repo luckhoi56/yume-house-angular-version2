@@ -14,6 +14,8 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+
+import { StripeModule } from "stripe-angular"
 @NgModule({
   declarations: [],
   imports: [
@@ -31,7 +33,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzRadioModule,
     NzStatisticModule,
     NzDropDownModule,
-    NzButtonModule
+    NzButtonModule,
+    StripeModule.forRoot("pk_live_51GwwqJJpV9cXOdRhw2mJFANLPJbH5XwafRmdIDPAjfbMBW7Y3tjaOr4jXtMwQknbbdaCO1aTMa0r4GaeqYd8YCvf00Rpo2xypa")
   ],
   exports:[
     NzCardModule,
