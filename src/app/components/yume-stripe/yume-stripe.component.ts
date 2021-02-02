@@ -20,7 +20,7 @@ import { environment as env } from '../../../environments/environment';
 })
 export class YumeStripeComponent implements OnInit {
   @ViewChild(StripeCardNumberComponent) card: StripeCardNumberComponent;
-
+  m_item ="Ca La Han"
   cardOptions: StripeCardElementOptions = {
     style: {
       base: {
