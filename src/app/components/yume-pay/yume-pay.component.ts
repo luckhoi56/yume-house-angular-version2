@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class YumePayComponent implements OnInit {
   @Input() m_tax = 5
   @Input() m_total = 0
+  @Input() m_subTotal = 0
   constructor() { }
 
   ngOnInit(): void {

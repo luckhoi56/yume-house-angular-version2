@@ -9,5 +9,5 @@
    </div>   
 </div>
 
-<app-yume-pay [m_tax]="(this.getTotal()*0.1).toFixed(2)" [m_total]="(this.getTotal()*1.1).toFixed(2)"></app-yume-pay>
+<app-yume-pay [m_subTotal]="this.getTotal().toFixed(2)"[m_tax]="(this.getTotal()*0.1).toFixed(2)" [m_total]="(this.getTotal()*1.1).toFixed(2)"></app-yume-pay>
 <button (click)="makePost()" >Send to Server</button>
