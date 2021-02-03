@@ -14,7 +14,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { StripeModule } from "stripe-angular"
 @NgModule({
   declarations: [],
@@ -34,7 +34,8 @@ import { StripeModule } from "stripe-angular"
     NzStatisticModule,
     NzDropDownModule,
     NzButtonModule,
-    StripeModule.forRoot("pk_live_51GwwqJJpV9cXOdRhw2mJFANLPJbH5XwafRmdIDPAjfbMBW7Y3tjaOr4jXtMwQknbbdaCO1aTMa0r4GaeqYd8YCvf00Rpo2xypa")
+    StripeModule.forRoot("pk_live_51GwwqJJpV9cXOdRhw2mJFANLPJbH5XwafRmdIDPAjfbMBW7Y3tjaOr4jXtMwQknbbdaCO1aTMa0r4GaeqYd8YCvf00Rpo2xypa"),
+    NzSpinModule
   ],
   exports:[
     NzCardModule,
@@ -50,7 +51,8 @@ import { StripeModule } from "stripe-angular"
     NzRadioModule,
     NzStatisticModule,
     NzDropDownModule,
-    NzButtonModule
+    NzButtonModule,
+    NzSpinModule
   ]
 })
 export class MenuModule { }
