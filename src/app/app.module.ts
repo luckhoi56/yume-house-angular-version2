@@ -23,6 +23,7 @@ import { StripeModule } from "stripe-angular";
 import { NgxStripeModule } from 'ngx-stripe';
 import { FormGroup, FormBuilder, Validators,ReactiveFormsModule  } from '@angular/forms';
 import { YumeSpinComponent } from './components/yume-spin/yume-spin.component';
+import { LocationComponent } from './pages/location/location.component';
 
 registerLocaleData(en);
 @NgModule({
@@ -36,7 +37,8 @@ registerLocaleData(en);
     YumePayComponent,
     YumeDropDownComponent,
     YumeStripeComponent,
-    YumeSpinComponent
+    YumeSpinComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
