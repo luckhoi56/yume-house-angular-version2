@@ -42,7 +42,9 @@ export class MenuService {
   public getReasonToClose(){
     return this.http.get("http://localhost:4242/getReasonToClose")
   }
-  
+  public getServer(){
+    return this.http.get("http://localhost:4242")
+  }
   public receiveAllData(){
      // data is unionized now
     return this.m_flag

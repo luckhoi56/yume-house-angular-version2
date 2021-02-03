@@ -22,7 +22,7 @@ import { environment as env } from '../../../environments/environment';
 export class YumeStripeComponent implements OnInit {
   @ViewChild(StripeCardNumberComponent) card: StripeCardNumberComponent;
   m_item ="Ca La Han"
-  m_button_flag = 1
+  m_button_flag = 0
   cardOptions: StripeCardElementOptions = {
     style: {
       base: {
@@ -58,6 +58,10 @@ export class YumeStripeComponent implements OnInit {
       email:"",
       phone:""
     });
+    this.menu.getServer().subscribe(resp =>{
+      console.log(resp)
+      this.m_button_flag=1
+    })
   }
 
   pay(): void {
