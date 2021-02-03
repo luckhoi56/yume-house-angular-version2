@@ -9,14 +9,22 @@
   <ngx-stripe-card-number [options]="cardOptions"></ngx-stripe-card-number>
   <ngx-stripe-card-expiry [options]="cardOptions"></ngx-stripe-card-expiry>
   <ngx-stripe-card-cvc [options]="cardOptions"></ngx-stripe-card-cvc>
-  <div *ngIf="m_button_flag">
+  <div *ngIf="m_button_flag==1">
     <button type="submit" (click)="pay()">
       PAY
     </button>
   </div>
-  <div *ngIf="!m_button_flag">
-    <button type="submit" (click)="pay()">
-      DONTPAY
+  <div *ngIf="m_button_flag==2">
+    <app-yume-spin></app-yume-spin>
+  </div>
+  <div *ngIf="m_button_flag==3">
+    <button type="submit" >
+      PAYMENT SUCCEEDED
+    </button>
+  </div>
+  <div *ngIf="m_button_flag==4">
+    <button type="submit" >
+      PAYMENT FAILED
     </button>
   </div>
   

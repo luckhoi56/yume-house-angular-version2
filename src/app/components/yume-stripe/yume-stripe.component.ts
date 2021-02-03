@@ -22,7 +22,7 @@ import { environment as env } from '../../../environments/environment';
 export class YumeStripeComponent implements OnInit {
   @ViewChild(StripeCardNumberComponent) card: StripeCardNumberComponent;
   m_item ="Ca La Han"
-  m_button_flag = true
+  m_button_flag = 1
   cardOptions: StripeCardElementOptions = {
     style: {
       base: {
@@ -61,7 +61,7 @@ export class YumeStripeComponent implements OnInit {
   }
 
   pay(): void {
-    this.m_button_flag = false
+    this.m_button_flag = 2
     if (this.stripeTest.valid) {
       this.card.update({disabled:true})
       this.createPaymentIntent(this.stripeTest.get('amount').value)
@@ -84,13 +84,13 @@ export class YumeStripeComponent implements OnInit {
             // Show error to your customer (e.g., insufficient funds)
             console.log(result.error.message);
             console.log("payment failed")
-            this.m_button_flag = true
+            this.m_button_flag = 4
           } else {
             // The payment has been processed!
             if (result.paymentIntent.status === 'succeeded') {
               // Show a success message to your customer
               console.log("payment succeeded")
-              this.m_button_flag = true
+              this.m_button_flag = 3
             }
           }
         });
