@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import {MenuService} from '../../menu.service'
 
 import { StripeService, StripeCardNumberComponent } from 'ngx-stripe';
 import {
@@ -45,7 +46,8 @@ export class YumeStripeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private fb: FormBuilder,
-    private stripeService: StripeService
+    private stripeService: StripeService,
+    public menu: MenuService
   ) {}
 
   ngOnInit(): void {
@@ -70,16 +72,19 @@ export class YumeStripeComponent implements OnInit {
                 },
               },
             })
+            
           )
         )
         .subscribe((result) => {
           if (result.error) {
             // Show error to your customer (e.g., insufficient funds)
             console.log(result.error.message);
+            console.log("payment failed")
           } else {
             // The payment has been processed!
             if (result.paymentIntent.status === 'succeeded') {
               // Show a success message to your customer
+              console.log("payment succeeded")
             }
           }
         });
@@ -89,21 +94,9 @@ export class YumeStripeComponent implements OnInit {
   }
 
   createPaymentIntent(amount: number): Observable<PaymentIntent> {
-    console.log("get to payment intent")
     return this.http.post<PaymentIntent>(
       `http://localhost:4242/create-payment-intent`,
-      {
-        "ingredients": [{
-            "name": "num1",
-            "quantity": "5"
-        }, {
-            "name": "num2",
-            "quantity": "2"
-        }, {
-            "name": "num3",
-            "quantity": "9"
-        }]
-    }
+      this.menu.getData()
     );
   }
 }
