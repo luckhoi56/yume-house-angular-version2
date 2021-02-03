@@ -9,7 +9,15 @@
   <ngx-stripe-card-number [options]="cardOptions"></ngx-stripe-card-number>
   <ngx-stripe-card-expiry [options]="cardOptions"></ngx-stripe-card-expiry>
   <ngx-stripe-card-cvc [options]="cardOptions"></ngx-stripe-card-cvc>
-  <button type="submit" (click)="pay()">
-    PAY
-  </button>
+  <div *ngIf="m_button_flag">
+    <button type="submit" (click)="pay()">
+      PAY
+    </button>
+  </div>
+  <div *ngIf="!m_button_flag">
+    <button type="submit" (click)="pay()">
+      DONTPAY
+    </button>
+  </div>
+  
 </ngx-stripe-card-group>
