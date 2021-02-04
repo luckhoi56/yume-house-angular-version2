@@ -95,6 +95,15 @@ export class YumeStripeComponent implements OnInit {
               // Show a success message to your customer
               console.log("payment succeeded")
               this.m_button_flag = 3
+              let m_data ={
+                "customer_name": this.stripeTest.get('name').value,
+                "customer_phone_number": this.stripeTest.get('phone').value,
+                "customer_email": this.stripeTest.get('email').value,
+                "items": this.menu.getData()
+              }
+              this.createReceipt(m_data).subscribe((result)=>{
+                console.log(result)
+              })
             }
           }
         });
@@ -109,5 +118,10 @@ export class YumeStripeComponent implements OnInit {
       `http://localhost:4242/create-payment-intent`,
       this.menu.getData()
     );
+  }
+  createReceipt(m_data):any{
+    return this.http.post<any>(
+      `http://localhost:4242/send-receipt`,m_data
+    )
   }
 }
