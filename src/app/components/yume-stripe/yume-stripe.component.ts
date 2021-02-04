@@ -104,6 +104,10 @@ export class YumeStripeComponent implements OnInit {
               this.createReceipt(m_data).subscribe((result)=>{
                 console.log(result)
               })
+              //send to server
+              this.menu.sendOrder().subscribe(resp=>{
+                console.log(resp)
+              })
             }
           }
         });
