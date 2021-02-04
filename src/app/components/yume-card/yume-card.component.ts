@@ -19,6 +19,7 @@ export class YumeCardComponent implements OnInit {
       //console.log(this.item.Toppings[0].Choice)
       this.radioValue_1 = this.item.Toppings[0].Choice
       this.item["chosenTopping"] = this.radioValue_1
+      this.item["chosenToppingPrice"] = 0
     }
     if(this.item.chosenTopping!=null){
       this.radioValue_1 = this.item.chosenTopping
@@ -27,6 +28,7 @@ export class YumeCardComponent implements OnInit {
       //console.log(this.item.Sizes[0].Choice)
       this.radioValue_2 = this.item.Sizes[0].Choice
       this.item["chosenSize"] = this.radioValue_2
+      this.item["chosenSizePrice"] = 0
     }
     if(this.item.chosenSize != null){
       this.radioValue_2 = this.item.chosenSize

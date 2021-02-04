@@ -1,6 +1,6 @@
 <nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
     <nz-card-meta [nzTitle]="item.ItemName"  [nzAvatar]="avatarTemplate"></nz-card-meta>
-    <div>${{item.chosenSizePrice ? (item.chosenSizePrice + item.Price +item.chosenToppingPrice) : item.Price}}</div>
+    <div>${{item.chosenSizePrice + item.Price +item.chosenToppingPrice}}</div>
     <div>Quantity: {{item.Quantity}}</div>
     
 </nz-card>
