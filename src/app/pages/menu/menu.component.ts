@@ -77,7 +77,7 @@ export class MenuComponent implements OnInit {
           m_temp["Sizes"]=this.m_soupSize
           m_temp["Toppings"]=this.m_soupTopping
         }
-        else if(m_temp.Category=="Smoothie"){
+        else if(m_temp.Category=="Smoothie" || m_temp.Category == "Tea" || m_temp.Category == "Coffee"){
           m_temp["Sizes"]=this.m_drinkSize
           m_temp["Toppings"]=this.m_drinkTopping
         }
