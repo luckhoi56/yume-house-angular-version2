@@ -68,7 +68,7 @@ export class YumeStripeComponent implements OnInit {
     this.m_button_flag = 2
     if (this.stripeTest.valid) {
       this.card.update({disabled:true})
-      this.createPaymentIntent(this.stripeTest.get('amount').value)
+      this.createPaymentIntent()
         .pipe(
           switchMap((pi) =>
             this.stripeService.confirmCardPayment(pi.client_secret, {
@@ -113,7 +113,7 @@ export class YumeStripeComponent implements OnInit {
     
   }
 
-  createPaymentIntent(amount: number): Observable<PaymentIntent> {
+  createPaymentIntent(): Observable<PaymentIntent> {
     return this.http.post<PaymentIntent>(
       `http://localhost:4242/create-payment-intent`,
       this.menu.getData()
