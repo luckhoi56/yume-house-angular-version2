@@ -1,7 +1,8 @@
 <nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
-    <nz-card-meta [nzTitle]="item.ItemName" [nzDescription]="item.chosenSizePrice ? (item.chosenSizePrice + item.Price) : item.Price" [nzAvatar]="avatarTemplate"></nz-card-meta>
-    
+    <nz-card-meta [nzTitle]="item.ItemName"  [nzAvatar]="avatarTemplate"></nz-card-meta>
+    <div>${{item.chosenSizePrice ? (item.chosenSizePrice + item.Price) : item.Price}}</div>
     <div>Quantity: {{item.Quantity}}</div>
+    
 </nz-card>
   <ng-template #avatarTemplate>
     <nz-avatar [nzSrc]="item.Image"></nz-avatar>
