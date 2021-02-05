@@ -9,6 +9,7 @@ export class HomeComponent implements OnInit {
   m_status :any // if m_status = 1, regular, 0 means forced close. m_status has more precedence than m_operation_hours
   m_reason_to_close: any
   m_operation_hours: any
+  m_announcement: any
   constructor(public menu: MenuService) { }
 
   ngOnInit(): void {
@@ -20,6 +21,9 @@ export class HomeComponent implements OnInit {
     })
     this.menu.getHours().subscribe(data=>{
       this.m_operation_hours = data["open"]
+    })
+    this.menu.getAnnouncement().subscribe(data=>{
+      this.m_announcement = data["announcement"]
     })
   }
 

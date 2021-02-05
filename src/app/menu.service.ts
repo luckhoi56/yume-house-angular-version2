@@ -42,6 +42,9 @@ export class MenuService {
   public getReasonToClose(){
     return this.http.get("http://localhost:4242/getReasonToClose")
   }
+  public getAnnouncement(){
+    return this.http.get("http://localhost:4242/getAnnouncement")
+  }
   public getServer(){
     return this.http.get("http://localhost:4242")
   }

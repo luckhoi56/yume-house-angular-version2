@@ -1,5 +1,6 @@
 <h1>Welcome to Yume House Pho</h1>
 <div *ngIf="m_status == 1 && m_operation_hours == 1; else closeBlock">  
     <h1>Status: open</h1>
+    <h1>{{m_announcement}}</h1>
 </div>
 <ng-template  #closeBlock><h2>{{m_reason_to_close}}</h2></ng-template>
