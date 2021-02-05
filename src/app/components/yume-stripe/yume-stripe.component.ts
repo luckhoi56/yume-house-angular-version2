@@ -21,6 +21,8 @@ import { environment as env } from '../../../environments/environment';
 })
 export class YumeStripeComponent implements OnInit {
   @ViewChild(StripeCardNumberComponent) card: StripeCardNumberComponent;
+  m_status: any
+  m_operation_hours: any
   m_item ="Ca La Han"
   m_button_flag = 0
   cardOptions: StripeCardElementOptions = {
@@ -62,6 +64,14 @@ export class YumeStripeComponent implements OnInit {
       console.log(resp)
       this.m_button_flag=1
     })
+    this.menu.statusRestaurant().subscribe(data=>{
+      this.m_status = data["status"]
+    })
+    
+    this.menu.getHours().subscribe(data=>{
+      this.m_operation_hours = data["open"]
+    })
+  
   }
 
   pay(): void {

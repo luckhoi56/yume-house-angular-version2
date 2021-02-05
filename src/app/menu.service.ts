@@ -45,6 +45,9 @@ export class MenuService {
   public getServer(){
     return this.http.get("http://localhost:4242")
   }
+  public getHours(){
+    return this.http.get("http://localhost:4242/getHours")
+  }
   public receiveAllData(){
      // data is unionized now
     return this.m_flag
