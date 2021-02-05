@@ -15,6 +15,12 @@ export class YumeCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if(this.item.Toppings[0] == null){ //no topping, then set the topping price = 0
+      this.item["chosenToppingPrice"] = 0
+    }
+    if(this.item.Sizes[0] == null){ //no size, then set the size price = 0
+      this.item["chosenSizePrice"] = 0
+    }
     if(this.item.Toppings[0] != null && this.item.chosenTopping==null){
       //console.log(this.item.Toppings[0].Choice)
       this.radioValue_1 = this.item.Toppings[0].Choice
