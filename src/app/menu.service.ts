@@ -18,7 +18,7 @@ export class MenuService {
   }
   constructor(private http:HttpClient) { }
   public statusRestaurant(){
-    return this.http.get("http://localhost:4242/statusRestaurant")
+    return this.http.get("https://yume-angular.herokuapp.com/statusRestaurant")
   }
   public searchMenuItems(){
     return this.http.get('https://yumemenu.s3-us-west-1.amazonaws.com/databaseFile/menu')
@@ -36,20 +36,20 @@ export class MenuService {
     return this.http.get('https://yumemenu.s3-us-west-1.amazonaws.com/databaseFile/soupSize')
   }
   public sendOrder(){
-    return this.http.post("http://localhost:4242/sendOrder", this.m_data)
-    //return this.http.get('http://localhost:4242/')
+    return this.http.post("https://yume-angular.herokuapp.com/sendOrder", this.m_data)
+    //return this.http.get('https://yume-angular.herokuapp.com/')
   }
   public getReasonToClose(){
-    return this.http.get("http://localhost:4242/getReasonToClose")
+    return this.http.get("https://yume-angular.herokuapp.com/getReasonToClose")
   }
   public getAnnouncement(){
-    return this.http.get("http://localhost:4242/getAnnouncement")
+    return this.http.get("https://yume-angular.herokuapp.com/getAnnouncement")
   }
   public getServer(){
-    return this.http.get("http://localhost:4242")
+    return this.http.get("https://yume-angular.herokuapp.com/")
   }
   public getHours(){
-    return this.http.get("http://localhost:4242/getHours")
+    return this.http.get("https://yume-angular.herokuapp.com/getHours")
   }
   public receiveAllData(){
      // data is unionized now

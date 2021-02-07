@@ -129,13 +129,13 @@ export class YumeStripeComponent implements OnInit {
 
   createPaymentIntent(): Observable<PaymentIntent> {
     return this.http.post<PaymentIntent>(
-      `http://localhost:4242/create-payment-intent`,
+      `https://yume-angular.herokuapp.com/create-payment-intent`,
       this.menu.getData()
     );
   }
   createReceipt(m_data):any{
     return this.http.post<any>(
-      `http://localhost:4242/send-receipt`,m_data
+      `https://yume-angular.herokuapp.com/send-receipt`,m_data
     )
   }
 }
