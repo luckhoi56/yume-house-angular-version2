@@ -47,7 +47,7 @@ registerLocaleData(en);
     FormsModule,
     BrowserAnimationsModule,
     MenuModule,
-    NgxStripeModule.forRoot("pk_live_51GwwqJJpV9cXOdRhw2mJFANLPJbH5XwafRmdIDPAjfbMBW7Y3tjaOr4jXtMwQknbbdaCO1aTMa0r4GaeqYd8YCvf00Rpo2xypa"),
+    NgxStripeModule.forRoot("pk_test_51GwwqJJpV9cXOdRhmPBpYIuoTOxiqRvvpKGEndZqwgj8tObTBnPpOgP7krDJJSsACzpf0xLylvGsliur7kkl2cOO00SW8uOU9S"),
     ReactiveFormsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
